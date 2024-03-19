@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Drawing;
 using ZXing;
 using ZXing.Common;
@@ -12,17 +12,17 @@ namespace barcode
         {
             string entityName = "entity name";
             string unitName = "unit name";
-
+            string sectionName = "section name";
             // Generate 2D (QR Code) barcode
-            GenerateAndSaveBarcode(entityName, unitName, BarcodeFormat.QR_CODE, "2D_Barcode.png");
+            GenerateAndSaveBarcode(entityName, unitName, sectionName, BarcodeFormat.QR_CODE, "2D_Barcode.png");
 
             // Generate 1D (Code 128) barcode
-            GenerateAndSaveBarcode(entityName, unitName, BarcodeFormat.CODE_128, "1D_Barcode.png");
+            GenerateAndSaveBarcode(entityName, unitName, sectionName, BarcodeFormat.CODE_128, "1D_Barcode.png");
         }
 
-        static void GenerateAndSaveBarcode(string entityName, string unitName, BarcodeFormat barcodeFormat, string fileName)
+        static void GenerateAndSaveBarcode(string entityName, string unitName, string sectionName, BarcodeFormat barcodeFormat, string fileName)
         {
-            string barcodeValue = $"Entity: {entityName}\nUnit: {unitName}";
+            string barcodeValue = $"\nEntity: {entityName}\nUnit: {unitName}\nSection: {sectionName}";
 
             var writer = new BarcodeWriter
             {
